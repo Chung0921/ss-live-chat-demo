@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Test Express</h1>
+        <input type="text" id="sendBtn"/>
+
+    </body>
+    <script type="text/javascript" src="/source/socket.io.js"></script>
+    <!--html中添加以下代码实现与服务器通信-->
+    <script type="text/javascript">
+        var socket=io.connect(),//与服务器进行连接
+            button=document.getElementById('sendBtn');
+        button.onclick=function(){
+            socket.emit('foo', 'hello');//发送一个名为foo的事件，并且传递一个字符串数据‘hello’
+        }
+    </script>
+</html>
